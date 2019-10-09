@@ -1,0 +1,16 @@
+
+schema {
+	query: Query
+}
+
+type SuperCharacter {
+	id: ID!
+	name: String!
+	age: Int
+
+}
+
+type Query {
+	allCharacters :[SuperCharacter]!
+
+}
