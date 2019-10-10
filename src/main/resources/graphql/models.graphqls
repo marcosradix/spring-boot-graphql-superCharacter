@@ -1,6 +1,7 @@
 
 schema {
 	query: Query
+	mutation: Mutation
 }
 
 type SuperCharacter {
@@ -12,5 +13,10 @@ type SuperCharacter {
 
 type Query {
 	allCharacters :[SuperCharacter]!
+	characterById(id:String ): SuperCharacter
 
+}
+
+type Mutation {
+	addCharacter(name: String!, age: Int):SuperCharacter
 }

@@ -25,5 +25,9 @@ public class Query implements GraphQLQueryResolver{
 		return superCharacterRepository.findAll();
 		
 	}
+	
+	public SuperCharacter characterById(String id) {
+		return this.superCharacterRepository.findById(id).orElse(null);
+	}
 
 }

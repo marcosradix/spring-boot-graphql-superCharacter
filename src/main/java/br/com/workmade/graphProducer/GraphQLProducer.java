@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import br.com.workmade.repository.SuperCharacterRepository;
+import br.com.workmade.resolvers.Mutation;
 import br.com.workmade.resolvers.Query;
 
 @Configuration
@@ -14,7 +15,9 @@ public class GraphQLProducer {
 	private SuperCharacterRepository superCharacterRepository;
 
 	
-	@Bean(value = "queryProducer")
+	@Bean
 	public Query query() {return new Query(superCharacterRepository);}
 
+	@Bean
+	public Mutation mutation() { return new Mutation(superCharacterRepository); }
 }
