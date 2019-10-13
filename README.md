@@ -27,4 +27,11 @@ mutation{
   }
 }
 
+##Mutation insert group
+mutation{
+  addGroup(name: "TheGoodGuys", orientation: HERO)
+  {name orientation}
+}
+
+
 

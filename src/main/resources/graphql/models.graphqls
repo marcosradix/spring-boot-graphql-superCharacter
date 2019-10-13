@@ -14,9 +14,24 @@ type SuperCharacter {
 type Query {
 	allCharacters :[SuperCharacter]!
 	characterById(id:String ): SuperCharacter
+	groups: [SuperGroup]!
+	groupByName(name: String):SuperGroup
 
 }
 
 type Mutation {
 	addCharacter(name: String!, age: Int):SuperCharacter
+	addGroup(name: String, orientation:Orientation):SuperGroup
+}
+
+type SuperGroup {
+	id: ID!
+	name: String!
+	orientation: Orientation
+	members: [SuperCharacter]
+}
+
+enum Orientation {
+	HERO, VillAIN
+
 }
