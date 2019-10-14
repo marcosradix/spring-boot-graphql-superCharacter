@@ -10,11 +10,31 @@ public class SuperCharacter {
 	private String id;
 	private String name;
 	private int age;
+	private SuperGroup superGroup;
 	
+	
+	
+	
+	public SuperCharacter() {}
+
+	public SuperCharacter(String id, String name, int age, SuperGroup superGroup) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.superGroup = superGroup;
+	}
+
 	public SuperCharacter(String id, String name, int age) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
+	}
+	
+	public SuperGroup getSuperGroup() {
+		return superGroup;
+	}
+	public void setSuperGroup(SuperGroup superGroup) {
+		this.superGroup = superGroup;
 	}
 	public String getId() {
 		return id;

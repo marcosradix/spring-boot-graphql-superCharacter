@@ -8,6 +8,7 @@ type SuperCharacter {
 	id: ID!
 	name: String!
 	age: Int
+	superGroup: SuperGroup
 
 }
 
@@ -20,7 +21,7 @@ type Query {
 }
 
 type Mutation {
-	addCharacter(name: String!, age: Int):SuperCharacter
+	addCharacter(name: String!, age: Int, groupName: String):SuperCharacter
 	addGroup(name: String, orientation:Orientation):SuperGroup
 }
 

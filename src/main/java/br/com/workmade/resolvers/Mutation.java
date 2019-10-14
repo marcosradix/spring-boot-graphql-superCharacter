@@ -18,8 +18,10 @@ public class Mutation implements GraphQLMutationResolver{
 		this.superGroupRepository = superGroupRepository;
 	}
 
-	public SuperCharacter addCharacter(String name, int age) {
-		return this.superCharacterRepository.save(new SuperCharacter(null, name, age));
+	public SuperCharacter addCharacter(String name, int age, String groupName) {
+		SuperGroup group = this.superGroupRepository.findByName(groupName);
+		
+		return this.superCharacterRepository.save(new SuperCharacter(null, name, age, group));
 	}
 
 	public SuperGroup addGroup(String name, Orientation orientation) {

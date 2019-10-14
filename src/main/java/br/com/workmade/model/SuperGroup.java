@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(value = "SuperGroup")
@@ -13,6 +14,7 @@ public class SuperGroup {
 	private String id;
 	private String name;
 	private Orientation orientation;
+	@DBRef(lazy = true)
 	private List<SuperCharacter> members = new ArrayList<>();
 	
 	
